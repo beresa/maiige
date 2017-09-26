@@ -1,0 +1,9 @@
+<IfModule mod_env.c>
+    SetEnv CI_ENV development
+</IfModule>
+
+SetEnv CI_ENV testing
+
+RewriteEngine on
+RewriteCond $1 !^(index\.php|assets|plugins|robots\.txt)
+RewriteRule ^(.*)$ /index.php/$1 [L]
